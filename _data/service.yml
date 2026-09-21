@@ -1,12 +1,4 @@
 # Service. `label` is the left gutter, `text` may contain inline HTML.
-# TODO: replace the placeholders below with your actual service record,
-# or delete an entry entirely if it doesn't apply yet.
 
 - label: Reviewer
-  text: "[CONFERENCE] [YEAR] &middot; [CONFERENCE] [YEAR] &middot; [JOURNAL] [YEAR]"
-
-- label: Teaching
-  text: "[COURSE NUMBER] [COURSE NAME], [SEMESTER] &mdash; Teaching Assistant"
-
-- label: Mentoring
-  text: "[PROGRAM OR STUDENT], [YEAR]"
+  text: "IROS &middot; ICRA"
