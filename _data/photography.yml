@@ -1,0 +1,8 @@
+# Photography. The first entry renders large; the rest fall into a 2-up grid.
+# Drop files into assets/img/photography/ and add an entry here.
+
+- src: /assets/img/photography/ridge.jpg
+  title: "[PHOTO TITLE]"
+  location: "[LOCATION]"
+  year: "[YEAR]"
+  alt: Snow-covered ridge under heavy cloud

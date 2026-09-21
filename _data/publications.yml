@@ -1,0 +1,54 @@
+# Publications, newest first.
+#
+#   selected: true   -> shows under the "Selected" tab (and in "All")
+#   selected: false  -> shows only under "All"
+#
+# `links` is an ordered list; drop any you don't have.
+# Source of truth for BibTeX stays in _bibliography/papers.bib.
+
+- id: physgraph
+  title: "PhysGraph: A Physics-aware 3D Scene Graph for Perception and Reasoning"
+  authors:
+    - Haoyu Li
+    - Aaron Thomas
+    - Shuyan Zhou
+    - Xianyi Cheng
+  venue: Under Review
+  year: 2025
+  selected: true
+  preview: /assets/publication_preview/PhysGraph-preview.jpg
+  links: []
+
+- id: aura
+  title: "Accelerating Physical Property Reasoning for Augmented Visual Cognition"
+  authors:
+    - Hongbo Lan
+    - Zhenlin An
+    - Haoyu Li
+    - Vaibhav Singh
+    - Longfei Shangguan
+  venue: Under Review
+  year: 2025
+  selected: true
+  preview: /assets/publication_preview/AURA-preview.jpg
+  links:
+    - name: arXiv
+      url: https://arxiv.org/abs/2511.03126
+    - name: Webpage
+      url: https://hl-demo.github.io/
+
+- id: ev-slam
+  title: "Ev-SLAM: Event-based Visual SLAM Through Adaptive Neural Radiance Fields"
+  authors:
+    - Haoyu Li
+    - Jingao Xu
+    - Longfei Shangguan
+  venue: International Conference on Parallel and Distributed Systems
+  venue_short: ICPADS
+  year: 2025
+  note: Best Presentation in Session
+  selected: true
+  preview: /assets/publication_preview/Ev-slam-preview.jpg
+  links:
+    - name: PDF
+      url: /assets/pdf/Event_SLAM.pdf
