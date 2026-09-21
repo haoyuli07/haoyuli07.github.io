@@ -411,17 +411,17 @@ hr {
 .footer-icons {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin-right: -5px;   /* optically align the last icon with the rule's edge */
+  gap: 0;
+  margin-right: -3px;   /* optically align the last icon with the rule's edge */
 }
 
 .footer-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 3px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1;
 }
 
