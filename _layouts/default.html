@@ -30,6 +30,7 @@
   <main class="wrap{% if page.wide %} wide{% endif %}">
     {{ content }}
 
+    {%- unless page.hide_footer %}
     <hr>
     <footer class="footer">
       <span>{{ site.author.name }} &nbsp;&middot;&nbsp; Updated {{ site.time | date: "%B %Y" }}</span>
@@ -50,6 +51,7 @@
       </nav>
       {%- endif %}
     </footer>
+    {%- endunless %}
   </main>
 </body>
 </html>
