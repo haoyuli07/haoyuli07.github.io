@@ -93,7 +93,10 @@ footer_icons: true
     {%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse %}
     {%- for year in years %}
     <div class="year-divider" hidden><span>{{ year.name }}</span></div>
-      {%- for pub in year.items %}
+      {%- assign ur_items = year.items | where: "type", "under_review" -%}
+      {%- assign other_items = year.items | where_exp: "p", "p.type != 'under_review'" -%}
+      {%- assign ordered = ur_items | concat: other_items %}
+      {%- for pub in ordered %}
       {%- assign same = site.data.publications | where: "type", pub.type -%}
       {%- assign pos = 0 -%}
       {%- for q in same -%}{%- if q.id == pub.id -%}{%- assign pos = forloop.index -%}{%- endif -%}{%- endfor -%}
