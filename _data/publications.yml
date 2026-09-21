@@ -20,7 +20,7 @@
     - Xinyuan Luo
     - Haoyu Li
     - Xianyi Cheng
-  venue: IROSW FullShift Robot CoWorkers
+  venue: IROS FullShift Robot CoWorkers Workshop
   year: 2026
   selected: false
   preview: /assets/publication_preview/frames.jpg
@@ -37,7 +37,7 @@
     - Cody Andres Alessio-Bunnell
     - Yifei Dong
     - Xianyi Cheng
-  venue: RSSW Dexterous Manipulation
+  venue: RSS Dexterous Manipulation Workshop
   year: 2026
   selected: false
   preview: /assets/publication_preview/any-ttach.jpg
@@ -52,7 +52,7 @@
     - Haoyu Li
     - Vaibhav Singh
     - Longfei Shangguan
-  venue: CVPRW OpenSUN3D
+  venue: CVPR OpenSUN3D Workshop
   year: 2026
   selected: false
   preview: /assets/publication_preview/structure-guided-3d.jpg
