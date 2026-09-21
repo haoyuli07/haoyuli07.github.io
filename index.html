@@ -3,9 +3,6 @@ layout: default
 footer_icons: true
 ---
 
-{%- assign sel_count = site.data.publications | where: "selected", true | size -%}
-{%- assign all_count = site.data.publications | size -%}
-
 <header class="masthead">
   <div class="bio">
     <h1>{{ site.author.name }}</h1>
@@ -86,8 +83,9 @@ footer_icons: true
   <div class="section-head">
     <span class="label">Publications</span>
     <div class="tabs" role="tablist" aria-label="Publication filter">
-      <button class="tab" type="button" role="tab" data-filter="selected" aria-selected="true">Selected <sup>{{ sel_count }}</sup></button>
-      <button class="tab" type="button" role="tab" data-filter="all" aria-selected="false">All <sup>{{ all_count }}</sup></button>
+      <button class="tab" type="button" role="tab" data-filter="selected" aria-selected="true">Selected</button>
+      <span class="tab-sep" aria-hidden="true">/</span>
+      <button class="tab" type="button" role="tab" data-filter="all" aria-selected="false">All</button>
     </div>
   </div>
 

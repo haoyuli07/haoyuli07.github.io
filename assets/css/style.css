@@ -13,6 +13,15 @@
   --wrap:     928px;  /* 864px content + 2 x 32px padding, as on ankile.com */
 }
 
+/* Asap's ampersand is stylised and reads oddly in "Texas A&M". This face
+   covers only U+0026 and borrows a plain one from the system; every other
+   character falls through to Asap. */
+@font-face {
+  font-family: 'Plain Amp';
+  src: local('Helvetica Neue'), local('HelveticaNeue'), local('Helvetica'), local('Arial'), local('ArialMT');
+  unicode-range: U+0026;
+}
+
 * { box-sizing: border-box; }
 
 html {
@@ -25,7 +34,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Asap', roboto, system-ui, sans-serif;
+  font-family: 'Plain Amp', 'Asap', roboto, system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -168,25 +177,32 @@ hr {
 
 /* --- publication index ---------------------------------------------------- */
 
-.tabs { display: flex; gap: 24px; }
+.tabs {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
 
 .tab {
   background: none;
   border: 0;
-  border-bottom: 1px solid transparent;
-  padding: 0 0 6px;
+  padding: 4px 0;
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
+  font-weight: 400;
   color: var(--muted);
 }
 
+.tab:hover { color: var(--ink); }
+
 .tab[aria-selected="true"] {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
+  color: var(--link);
+  font-weight: 600;
+  cursor: default;
 }
 
-.tab sup { font-size: 10.5px; color: var(--muted); }
+.tab-sep { color: #C3CAD1; }
 
 .pubs {
   margin-top: 22px;
@@ -195,20 +211,16 @@ hr {
   gap: 24px;
 }
 
-.year-divider {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 12.5px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-}
+.year-divider { line-height: 1; }
 
-.year-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
+.year-divider span {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--link);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--muted);
 }
 
 .pub { display: flex; gap: 20px; align-items: flex-start; }
