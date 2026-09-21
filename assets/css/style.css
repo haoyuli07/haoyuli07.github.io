@@ -122,6 +122,7 @@ hr {
 
 .icons a:hover { color: var(--link); }
 .icons svg { width: 22px; height: 22px; }
+.icons i { font-size: 22px; line-height: 1; }
 
 .note { font-size: 14px; line-height: 1.45; color: var(--muted); }
 
