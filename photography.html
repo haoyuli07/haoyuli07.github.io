@@ -10,16 +10,18 @@ wide: true
 
 <h1 class="page-title">Photography</h1>
 
-<p class="gallery-intro"><strong><em>Some moments stay with us. Here are a few of mine.</em></strong></p>
+<div class="gallery-intro">
+  <p><strong><em>Some moments stay with us. Here are a few of mine.</em></strong></p>
+</div>
 
 {%- assign photos = site.data.photography -%}
 
 {%- if photos and photos.size > 0 %}
-<div class="gallery">
+<div class="photo-grid" id="photo-grid">
   {%- for photo in photos %}
-  <figure class="shot" tabindex="0">
+  <figure class="photo-item" tabindex="0">
     <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
-    <figcaption>
+    <figcaption class="photo-caption">
       <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
       <span>{{ photo.location }}</span>
       <span class="sep" aria-hidden="true">|</span>
@@ -29,5 +31,28 @@ wide: true
   {%- endfor %}
 </div>
 {%- else %}
-<p style="margin-top: 28px; text-align: center; color: var(--muted);">Nothing here yet.</p>
+<p style="text-align: center; color: var(--muted);">Nothing here yet.</p>
 {%- endif %}
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.photo-item');
+  if (!items.length) return;
+
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function (el) { el.classList.add('visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (!entry.isIntersecting) return;
+      setTimeout(function () { entry.target.classList.add('visible'); }, i * 100);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  items.forEach(function (el) { observer.observe(el); });
+})();
+</script>
