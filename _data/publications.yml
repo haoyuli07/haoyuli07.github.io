@@ -86,6 +86,19 @@
     - name: Webpage
       url: https://hl-demo.github.io/
 
+- id: back-to-the-future
+  type: under_review
+  title: "Back to the Future: Predicting Long-Horizon Dynamics with Retrospective Correction for Disturbance-Aware Retrieval"
+  authors:
+    - Jiwoong Choi
+    - Haoyu Li
+    - Yiwei Lyu
+  venue: In Submission
+  year: 2026
+  selected: false
+  preview: /assets/publication_preview/back-to-the-future.jpg
+  links: []
+
 - id: physgraph
   type: under_review
   title: "PhysGraph: A Physics-aware 3D Scene Graph for Perception and Reasoning"
