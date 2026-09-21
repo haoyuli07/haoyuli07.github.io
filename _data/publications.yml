@@ -26,6 +26,26 @@
   preview: /assets/publication_preview/frames.jpg
   links: []
 
+- id: copre
+  type: workshop
+  title: "CoPRE: Improving Sensitivity in Proprioceptive Contact Detection for Low-Cost Robot Arms"
+  authors:
+    - Yuxiao Zhu*
+    - Jinzhou Li*
+    - Yifei Dong
+    - Muhammad Suhail
+    - Chunyuan Yang
+    - Xinyuan Luo
+    - Haoyu Li
+    - Boyuan Chen
+    - Xianyi Cheng
+  venue: RSS Planning and Control with Imperfect Sensors and Perception Workshop
+  year: 2026
+  note: In submission
+  selected: false
+  preview: /assets/publication_preview/copre.jpg
+  links: []
+
 - id: any-ttach
   type: workshop
   title: "Any-ttach: Quick End-effector Swapping Enables Manipulation Dexterity with Simplicity"
@@ -41,7 +61,11 @@
   year: 2026
   selected: false
   preview: /assets/publication_preview/any-ttach.jpg
-  links: []
+  links:
+    - name: arXiv
+      url: https://arxiv.org/pdf/2605.30569
+    - name: Webpage
+      url: https://any-ttach.github.io/
 
 - id: structure-guided-3d
   type: workshop
