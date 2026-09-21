@@ -1,8 +1,15 @@
-# Photography. The first entry renders large; the rest fall into a 2-up grid.
-# Drop files into assets/img/photography/ and add an entry here.
+# Photography gallery. Photos appear in this order in a masonry grid, each at
+# its natural aspect ratio (nothing is cropped). Hovering a photo reveals its
+# location and date.
+#
+# Drop files into assets/img/photography/ and add an entry here:
+#
+#   - src: /assets/img/photography/your-file.jpg
+#     location: "Place Name"
+#     date: "Month YYYY"
+#     alt: A short description of what's in the photo
 
 - src: /assets/img/photography/ridge.jpg
-  title: "[PHOTO TITLE]"
-  location: "[LOCATION]"
-  year: "[YEAR]"
-  alt: Snow-covered ridge under heavy cloud
+  location: "Ge'nyen Massif"
+  date: "July 2026"
+  alt: Snow-covered ridge of the Ge'nyen Massif under heavy cloud
