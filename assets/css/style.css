@@ -195,6 +195,22 @@ hr {
   gap: 24px;
 }
 
+.year-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.year-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
 .pub { display: flex; gap: 20px; align-items: flex-start; }
 
 .pub .gutter {
@@ -231,8 +247,8 @@ hr {
 .pub .links .sep { color: var(--muted); }
 
 /* --- photography ---------------------------------------------------------- */
-/* Modelled on xunjianyin.github.io/photography, in a narrower 1140px frame
-   so cards stay small (~350px) and three columns hold down to 860px. */
+/* Card styling modelled on xunjianyin.github.io/photography. Layout is
+   justified rows (2 then 3 photos) so photos are never cropped. */
 
 .wrap.wide {
   max-width: 1140px;
@@ -260,16 +276,29 @@ hr {
 
 .gallery-intro p { margin: 0; }
 
-.photo-grid {
-  column-count: 3;
-  column-gap: 20px;
+.photo-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin-bottom: 60px;
 }
 
+.photo-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* flex-grow (set inline) = the photo's aspect ratio, so a row's photos
+   share one height and keep their original proportions. */
+.photo-fill { flex-basis: 0; }
+
 .photo-item {
   position: relative;
-  margin: 0 0 20px;
-  break-inside: avoid;
+  flex-basis: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  margin: 0;
   overflow: hidden;
   border-radius: 12px;
   background: #FFFFFF;
@@ -339,8 +368,7 @@ hr {
 
 @media (max-width: 860px) {
   .wrap.wide { padding: 30px 15px 0; }
-  .photo-grid { column-count: 2; column-gap: 15px; }
-  .photo-item { margin-bottom: 15px; }
+  .photo-rows, .photo-row { gap: 15px; }
 }
 
 @media (max-width: 768px) {
@@ -350,8 +378,9 @@ hr {
 
 @media (max-width: 560px) {
   .wrap.wide { padding: 20px 10px 0; }
-  .photo-grid { column-count: 1; column-gap: 0; }
-  .photo-item { margin-bottom: 15px; }
+  .photo-row { flex-direction: column; }
+  .photo-item { flex: none !important; width: 100%; }
+  .photo-fill { display: none; }
   .photo-caption { opacity: 1; padding: 30px 12px 12px; font-size: 13.5px; }
 }
 

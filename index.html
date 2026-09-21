@@ -91,38 +91,42 @@ layout: default
   </div>
 
   <div class="pubs" id="pub-list">
-    {%- for pub in site.data.publications %}
-    <article class="pub" data-selected="{{ pub.selected | default: false }}">
-      <div class="gutter"><span class="idx"></span><br>{{ pub.year }}</div>
+    {%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+    {%- for year in years %}
+    <div class="year-divider" hidden><span>{{ year.name }}</span></div>
+      {%- for pub in year.items %}
+      <article class="pub" data-selected="{{ pub.selected | default: false }}">
+        <div class="gutter"><span class="idx"></span><br>{{ pub.year }}</div>
 
-      {%- if pub.preview and pub.preview != "" %}
-      <img src="{{ pub.preview | relative_url }}" alt="" loading="lazy">
-      {%- else %}
-      <div class="well" aria-hidden="true"></div>
-      {%- endif %}
+        {%- if pub.preview and pub.preview != "" %}
+        <img src="{{ pub.preview | relative_url }}" alt="" loading="lazy">
+        {%- else %}
+        <div class="well" aria-hidden="true"></div>
+        {%- endif %}
 
-      <div class="body">
-        <div class="title">{{ pub.title }}</div>
-        <div class="authors">
-          {%- for a in pub.authors -%}
-          {%- if a == site.author.name %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif -%}
-          {%- unless forloop.last %}, {% endunless -%}
-          {%- endfor -%}
+        <div class="body">
+          <div class="title">{{ pub.title }}</div>
+          <div class="authors">
+            {%- for a in pub.authors -%}
+            {%- if a == site.author.name %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif -%}
+            {%- unless forloop.last %}, {% endunless -%}
+            {%- endfor -%}
+          </div>
+          <div class="venue">{{ pub.venue }} {{ pub.year }}</div>
+          {%- if pub.note and pub.note != "" %}
+          <div class="venue">{{ pub.note }}</div>
+          {%- endif %}
+          {%- if pub.links and pub.links.size > 0 %}
+          <div class="links">
+            {%- for l in pub.links -%}
+            <a href="{{ l.url | relative_url }}">{{ l.name }}</a>
+            {%- unless forloop.last %}<span class="sep">&middot;</span>{% endunless -%}
+            {%- endfor -%}
+          </div>
+          {%- endif %}
         </div>
-        <div class="venue">{{ pub.venue }} {{ pub.year }}</div>
-        {%- if pub.note and pub.note != "" %}
-        <div class="venue">{{ pub.note }}</div>
-        {%- endif %}
-        {%- if pub.links and pub.links.size > 0 %}
-        <div class="links">
-          {%- for l in pub.links -%}
-          <a href="{{ l.url | relative_url }}">{{ l.name }}</a>
-          {%- unless forloop.last %}<span class="sep">&middot;</span>{% endunless -%}
-          {%- endfor -%}
-        </div>
-        {%- endif %}
-      </div>
-    </article>
+      </article>
+      {%- endfor %}
     {%- endfor %}
   </div>
 </section>
@@ -167,10 +171,14 @@ layout: default
     });
   }
 
+  var dividers = Array.prototype.slice.call(list.querySelectorAll('.year-divider'));
+
   function apply(filter) {
     pubs.forEach(function (el) {
       el.hidden = (filter === 'selected') && el.dataset.selected !== 'true';
     });
+    // Year dividers belong to the "All" view only.
+    dividers.forEach(function (d) { d.hidden = (filter !== 'all'); });
     renumber();
   }
 

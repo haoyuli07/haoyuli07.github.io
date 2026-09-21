@@ -17,17 +17,40 @@ wide: true
 {%- assign photos = site.data.photography -%}
 
 {%- if photos and photos.size > 0 %}
-<div class="photo-grid" id="photo-grid">
-  {%- for photo in photos %}
-  <figure class="photo-item" tabindex="0">
-    <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
-    <figcaption class="photo-caption">
-      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-      <span>{{ photo.location }}</span>
-      <span class="sep" aria-hidden="true">|</span>
-      <span>{{ photo.date }}</span>
-    </figcaption>
-  </figure>
+{%- comment -%}
+  Justified rows alternating 2 and 3 photos. Each photo's flex-grow is its
+  aspect ratio, so photos in a row share one height and nothing is cropped.
+  A short final row gets a spacer so it doesn't stretch to full width.
+{%- endcomment -%}
+{%- assign n = photos.size -%}
+{%- assign i = 0 -%}
+{%- assign row = 0 -%}
+<div class="photo-rows" id="photo-grid">
+  {%- for k in (1..n) %}
+  {%- if i >= n %}{% break %}{% endif -%}
+  {%- assign odd = row | modulo: 2 -%}
+  {%- if odd == 0 %}{% assign per = 2 %}{% else %}{% assign per = 3 %}{% endif -%}
+  {%- assign remaining = n | minus: i %}
+  <div class="photo-row">
+    {%- for photo in photos offset: i limit: per %}
+    {%- assign ratio = photo.width | times: 1.0 | divided_by: photo.height %}
+    <figure class="photo-item" tabindex="0" style="flex-grow: {{ ratio }};">
+      <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy">
+      <figcaption class="photo-caption">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>{{ photo.location }}</span>
+        <span class="sep" aria-hidden="true">|</span>
+        <span>{{ photo.date }}</span>
+      </figcaption>
+    </figure>
+    {%- endfor %}
+    {%- if remaining < per %}
+    {%- assign missing = per | minus: remaining %}
+    <div class="photo-fill" aria-hidden="true" style="flex-grow: {{ missing | times: 1.5 }};"></div>
+    {%- endif %}
+  </div>
+  {%- assign i = i | plus: per -%}
+  {%- assign row = row | plus: 1 -%}
   {%- endfor %}
 </div>
 {%- else %}

@@ -1,35 +1,48 @@
-# Photography gallery, newest first. Photos keep their own aspect ratio in a
-# masonry grid, so mixing wide, tall and square shots gives the varied layout.
-# Hovering one reveals its location and date.
+# Photography gallery, newest first. Photos are laid out in justified rows that
+# alternate 2 and 3 photos per row; every photo keeps its original aspect
+# ratio (never cropped). Hovering one reveals its location and date.
 #
-# Add a photo: drop the file in assets/img/photography/, then add an entry:
+# Add a photo: drop the file in assets/img/photography/, then add an entry.
+# width/height are the image's pixel size; they set its shape in the row.
 #
 #   - src: /assets/img/photography/your-file.jpg
+#     width: 2000
+#     height: 1333
 #     location: "Place Name"
 #     date: "Month YYYY"
 #     alt: A short description of what's in the photo
 
 - src: /assets/img/photography/ridge.jpg
+  width: 2000
+  height: 1110
   location: "Ge'nyen Massif"
   date: "July 2026"
   alt: Snow-covered ridge of the Ge'nyen Massif under heavy cloud
 
-- src: /assets/img/photography/mount-cameroon-tall.jpg
+- src: /assets/img/photography/mount-cameroon.jpg
+  width: 2000
+  height: 1333
   location: "Mount Cameroon"
   date: "July 2026"
   alt: Jagged peaks under storm clouds, with sunlit forested slopes in the foreground
 
 - src: /assets/img/photography/seven-sisters.jpg
+  width: 2000
+  height: 1333
   location: "Seven Sisters Cliffs"
   date: "June 2024"
   alt: White chalk cliffs above a pebble beach, with wildflowers in the foreground
 
-- src: /assets/img/photography/pittsburgh-eclipse-square.jpg
+- src: /assets/img/photography/pittsburgh-eclipse.jpg
+  width: 2000
+  height: 1333
   location: "Pittsburgh"
   date: "April 2024"
-  alt: Total solar eclipse, the Sun's corona glowing around the dark disc of the Moon, with a small prominence at its edge
+  alt: Total solar eclipse, the Sun's corona glowing around the dark disc of the Moon
 
-- src: /assets/img/photography/sanya-tall.jpg
+- src: /assets/img/photography/sanya.jpg
+  width: 2000
+  height: 1333
   location: "Sanya"
   date: "July 2023"
   alt: Sunset over the sea, sunlight breaking through towering clouds above distant islands
