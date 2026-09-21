@@ -11,6 +11,8 @@ baseurl: ""
 
 author:
   name: Haoyu Li
+  # Rename the file when you swap photos, so browsers fetch the new one.
+  portrait: /assets/img/portrait-2026.jpg
   email: haoyul@tamu.edu
   # Shown on the page instead of the raw address, to slow down scrapers.
   email_display: "haoyul [at] tamu [dot] edu"

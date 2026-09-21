@@ -9,29 +9,7 @@ layout: default
   <div class="bio">
     <h1>{{ site.author.name }}</h1>
 
-    <p>I am a first-year CS PhD student at Texas A&amp;M University, advised by
-      <a href="https://yiweilyu-tamu.github.io/homepage/">Prof. Yiwei Lyu</a>.
-      Prior to TAMU, I worked with
-      <a href="https://xianyicheng.github.io/">Prof. Xianyi Cheng</a> at Duke University.
-      I earned my master's at the University of Pittsburgh, advised by
-      <a href="https://shanggdlk.github.io/">Prof. Longfei Shangguan</a>.</p>
-
-    <p>My research focuses on manipulation.</p>
-
-    <div class="contact">
-      <span class="label">Contact</span>
-      <a href="mailto:{{ site.author.email }}">{{ site.author.email_display | default: site.author.email }}</a>
-      {%- if site.links.cv and site.links.cv != "" %}
-      <span style="color: var(--muted);">&middot;</span>
-      <a href="{{ site.links.cv | relative_url }}">CV</a>
-      {%- endif %}
-    </div>
-  </div>
-
-  <div class="sidecar">
-    <img class="portrait" src="{{ '/assets/img/portrait.jpg' | relative_url }}" alt="{{ site.author.name }}">
     <div class="rule"></div>
-
     <div class="icons">
       <a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email">
         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -66,9 +44,31 @@ layout: default
       </a>
     </div>
 
+    <p>I am a first-year CS PhD student at Texas A&amp;M University, advised by
+      <a href="https://yiweilyu-tamu.github.io/homepage/">Prof. Yiwei Lyu</a>.
+      Prior to TAMU, I worked with
+      <a href="https://xianyicheng.github.io/">Prof. Xianyi Cheng</a> at Duke University.
+      I earned my master's at the University of Pittsburgh, advised by
+      <a href="https://shanggdlk.github.io/">Prof. Longfei Shangguan</a>.</p>
+
+    <p>My research focuses on manipulation.</p>
+
+    <div class="contact">
+      <span class="label">Contact</span>
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email_display | default: site.author.email }}</a>
+      {%- if site.links.cv and site.links.cv != "" %}
+      <span style="color: var(--muted);">&middot;</span>
+      <a href="{{ site.links.cv | relative_url }}">CV</a>
+      {%- endif %}
+    </div>
+
     {%- if site.contact_note and site.contact_note != "" %}
     <div class="note">{{ site.contact_note }}</div>
     {%- endif %}
+  </div>
+
+  <div class="sidecar">
+    <img class="portrait" src="{{ site.author.portrait | relative_url }}" alt="{{ site.author.name }}" width="1080" height="1440">
   </div>
 </header>
 
