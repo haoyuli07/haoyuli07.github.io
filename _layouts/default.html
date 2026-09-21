@@ -20,6 +20,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400..700;1,400..600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  {%- if page.footer_icons %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1/css/academicons.min.css">
+  {%- endif %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛰️</text></svg>">
 </head>
@@ -29,7 +32,21 @@
 
     <hr>
     <footer class="footer">
-      {{ site.author.name }} &nbsp;&middot;&nbsp; Updated {{ site.time | date: "%B %Y" }}
+      <span>{{ site.author.name }} &nbsp;&middot;&nbsp; Updated {{ site.time | date: "%B %Y" }}</span>
+      {%- if page.footer_icons %}
+      <nav class="footer-icons" aria-label="Profiles">
+        <a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        {%- if site.links.scholar and site.links.scholar != "" %}
+        <a href="{{ site.links.scholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if site.links.github and site.links.github != "" %}
+        <a href="{{ site.links.github }}" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if site.links.linkedin and site.links.linkedin != "" %}
+        <a href="{{ site.links.linkedin }}" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        {%- endif %}
+      </nav>
+      {%- endif %}
     </footer>
   </main>
 </body>
