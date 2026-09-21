@@ -11,8 +11,9 @@ baseurl: ""
 
 author:
   name: Haoyu Li
-  # TODO: replace with your Texas A&M address
-  email: haoyu.harry.li@duke.edu
+  email: haoyul@tamu.edu
+  # Shown on the page instead of the raw address, to slow down scrapers.
+  email_display: "haoyul [at] tamu [dot] edu"
 
 # Profile links. Leave a value blank to hide that icon.
 links:

@@ -1,25 +1,17 @@
 # News, newest first. The three most recent show by default;
-# the rest sit behind the "Older news" toggle.
+# any beyond that sit behind an "Older news" toggle that appears automatically.
 #
 # `text` may contain inline HTML (links, <strong>).
 
-- date: "[MON] 2026"
+- date: "08.2026"
   text: >-
-    Started my CS PhD at Texas A&amp;M University, advised by
+    Started my Ph.D at TAMU, advised by
     <a href="https://yiweilyu-tamu.github.io/homepage/">Prof. Yiwei Lyu</a>.
 
-- date: "[MON] 2025"
+- date: "01.2026"
   text: >-
     Ev-SLAM received <strong>Best Presentation in Session</strong> at ICPADS 2025.
 
-- date: "[MON] 2025"
+- date: "06.2025"
   text: >-
-    AURA preprint is on <a href="https://arxiv.org/abs/2511.03126">arXiv</a>.
-
-- date: "[MON] 2025"
-  text: "PhysGraph submitted to [VENUE]."
-
-- date: "[MON] [YEAR]"
-  text: >-
-    Joined <a href="https://robotdexteritylab.com/">Dexlab</a> at Duke
-    as a research assistant.
+    Started my research journey in manipulation at Duke University.
