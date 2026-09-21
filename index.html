@@ -9,41 +9,6 @@ layout: default
   <div class="bio">
     <h1>{{ site.author.name }}</h1>
 
-    <div class="rule"></div>
-    <div class="icons">
-      <a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email">
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      </a>
-
-      {%- if site.links.scholar and site.links.scholar != "" %}
-      <a href="{{ site.links.scholar }}" aria-label="Google Scholar" title="Google Scholar">
-        <i class="ai ai-google-scholar" aria-hidden="true"></i>
-      </a>
-      {%- endif %}
-
-      {%- if site.links.github and site.links.github != "" %}
-      <a href="{{ site.links.github }}" aria-label="GitHub" title="GitHub">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
-      {%- endif %}
-
-      {%- if site.links.linkedin and site.links.linkedin != "" %}
-      <a href="{{ site.links.linkedin }}" aria-label="LinkedIn" title="LinkedIn">
-        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-      </a>
-      {%- endif %}
-
-      {%- if site.links.x and site.links.x != "" %}
-      <a href="{{ site.links.x }}" aria-label="X" title="X">
-        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-      </a>
-      {%- endif %}
-
-      <a href="{{ '/photography/' | relative_url }}" aria-label="Photography" title="Photography">
-        <i class="fa-solid fa-camera" aria-hidden="true"></i>
-      </a>
-    </div>
-
     <p>I am a first-year CS PhD student at Texas A&amp;M University, advised by
       <a href="https://yiweilyu-tamu.github.io/homepage/">Prof. Yiwei Lyu</a>.
       Prior to TAMU, I worked with
@@ -52,6 +17,23 @@ layout: default
       <a href="https://shanggdlk.github.io/">Prof. Longfei Shangguan</a>.</p>
 
     <p>My research focuses on manipulation.</p>
+
+    <nav class="profile-links" aria-label="Profiles">
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      {%- if site.links.scholar and site.links.scholar != "" %}
+      <a href="{{ site.links.scholar }}">Scholar</a>
+      {%- endif %}
+      {%- if site.links.github and site.links.github != "" %}
+      <a href="{{ site.links.github }}">GitHub</a>
+      {%- endif %}
+      {%- if site.links.linkedin and site.links.linkedin != "" %}
+      <a href="{{ site.links.linkedin }}">LinkedIn</a>
+      {%- endif %}
+      {%- if site.links.x and site.links.x != "" %}
+      <a href="{{ site.links.x }}">X</a>
+      {%- endif %}
+      <a href="{{ '/photography/' | relative_url }}">Photography</a>
+    </nav>
 
     <div class="contact">
       <span class="label">Contact</span>
