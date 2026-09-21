@@ -1,12 +1,38 @@
-# Publications, newest first.
+# Publications, NEWEST FIRST (labels are numbered from this order).
 #
-#   selected: true   -> shows under the "Selected" tab (and in "All")
-#   selected: false  -> shows only under "All"
+#   type      conference | workshop | journal | under_review
+#             -> label prefix C | W | J | U (set in _config.yml, pub_labels).
+#             Numbers count within each type, oldest = 1, so a paper keeps
+#             its label as new ones are added. When an under-review paper
+#             is accepted, change its type and it moves to C/W/J.
+#   selected  true  -> shows under "Selected" (and "All")
+#             false -> shows only under "All"
+#   preview   3:2 image in assets/publication_preview/
 #
 # `links` is an ordered list; drop any you don't have.
-# Source of truth for BibTeX stays in _bibliography/papers.bib.
+# BibTeX record of truth stays in _bibliography/papers.bib.
+
+- id: structure-guided-3d
+  type: workshop
+  title: "Efficient Structure-Guided 3D Physical Property Reasoning"
+  authors:
+    - Hongbo Lan
+    - Zhenlin An
+    - Haoyu Li
+    - Vaibhav Singh
+    - Longfei Shangguan
+  venue: CVPRW OpenSUN3D
+  year: 2026
+  selected: false
+  preview: /assets/publication_preview/structure-guided-3d.jpg
+  links:
+    - name: arXiv
+      url: https://arxiv.org/abs/2511.03126
+    - name: Webpage
+      url: https://hl-demo.github.io/
 
 - id: physgraph
+  type: under_review
   title: "PhysGraph: A Physics-aware 3D Scene Graph for Perception and Reasoning"
   authors:
     - Haoyu Li
@@ -16,28 +42,11 @@
   venue: Under Review
   year: 2025
   selected: true
-  preview: /assets/publication_preview/PhysGraph-preview.jpg
+  preview: /assets/publication_preview/physgraph.jpg
   links: []
 
-- id: aura
-  title: "Accelerating Physical Property Reasoning for Augmented Visual Cognition"
-  authors:
-    - Hongbo Lan
-    - Zhenlin An
-    - Haoyu Li
-    - Vaibhav Singh
-    - Longfei Shangguan
-  venue: Under Review
-  year: 2025
-  selected: true
-  preview: /assets/publication_preview/AURA-preview.jpg
-  links:
-    - name: arXiv
-      url: https://arxiv.org/abs/2511.03126
-    - name: Webpage
-      url: https://hl-demo.github.io/
-
 - id: ev-slam
+  type: conference
   title: "Ev-SLAM: Event-based Visual SLAM Through Adaptive Neural Radiance Fields"
   authors:
     - Haoyu Li
@@ -48,7 +57,7 @@
   year: 2025
   note: Best Presentation in Session
   selected: true
-  preview: /assets/publication_preview/Ev-slam-preview.jpg
+  preview: /assets/publication_preview/ev-slam.jpg
   links:
     - name: PDF
       url: /assets/pdf/Event_SLAM.pdf

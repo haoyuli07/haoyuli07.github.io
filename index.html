@@ -94,8 +94,12 @@ footer_icons: true
     {%- for year in years %}
     <div class="year-divider" hidden><span>{{ year.name }}</span></div>
       {%- for pub in year.items %}
+      {%- assign same = site.data.publications | where: "type", pub.type -%}
+      {%- assign pos = 0 -%}
+      {%- for q in same -%}{%- if q.id == pub.id -%}{%- assign pos = forloop.index -%}{%- endif -%}{%- endfor -%}
+      {%- assign num = same.size | minus: pos | plus: 1 -%}
       <article class="pub" data-selected="{{ pub.selected | default: false }}">
-        <div class="gutter"><span class="idx"></span><br>{{ pub.year }}</div>
+        <div class="gutter"><span class="idx">{{ site.pub_labels[pub.type] }}{{ num }}</span><br>{{ pub.year }}</div>
 
         {%- if pub.preview and pub.preview != "" %}
         <img src="{{ pub.preview | relative_url }}" alt="" loading="lazy">
@@ -161,15 +165,6 @@ footer_icons: true
   if (!list) return;
   var pubs = Array.prototype.slice.call(list.querySelectorAll('.pub'));
 
-  function renumber() {
-    var n = 0;
-    pubs.forEach(function (el) {
-      if (el.hidden) { el.querySelector('.idx').textContent = ''; return; }
-      n += 1;
-      el.querySelector('.idx').textContent = 'P' + (n < 10 ? '0' + n : n);
-    });
-  }
-
   var dividers = Array.prototype.slice.call(list.querySelectorAll('.year-divider'));
 
   function apply(filter) {
@@ -178,7 +173,6 @@ footer_icons: true
     });
     // Year dividers belong to the "All" view only.
     dividers.forEach(function (d) { d.hidden = (filter !== 'all'); });
-    renumber();
   }
 
   document.querySelectorAll('.tab').forEach(function (tab) {

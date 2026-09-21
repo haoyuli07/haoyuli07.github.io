@@ -25,6 +25,13 @@ links:
   x: "https://x.com/haoyuli07"
   cv: ""                 # e.g. /assets/pdf/cv.pdf
 
+# Publication label prefixes by type (see _data/publications.yml).
+pub_labels:
+  conference: C
+  workshop: W
+  journal: J
+  under_review: U
+
 contact_note: ""   # optional line under the contact email; leave empty to hide
 
 # ---------------------------------------------------------------------------
