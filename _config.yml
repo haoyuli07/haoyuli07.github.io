@@ -17,9 +17,9 @@ author:
 
 # Profile links. Leave a value blank to hide that icon.
 links:
-  scholar: ""            # e.g. https://scholar.google.com/citations?user=XXXX
+  scholar: "https://scholar.google.com/citations?user=wbaEUAkAAAAJ"
   github: https://github.com/haoyuli07
-  linkedin: ""           # e.g. https://www.linkedin.com/in/xxxx/
+  linkedin: "https://www.linkedin.com/in/haoyu-li-70148a29b/"
   x: ""                  # e.g. https://x.com/xxxx
   cv: ""                 # e.g. /assets/pdf/cv.pdf
 
