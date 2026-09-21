@@ -12,6 +12,37 @@
 # `links` is an ordered list; drop any you don't have.
 # BibTeX record of truth stays in _bibliography/papers.bib.
 
+- id: frames
+  type: workshop
+  title: "FRAMES: Failure Recovery And Monitoring of Embodied Skills for Humanoid Loco-Manipulation"
+  authors:
+    - Ajay Vikram Periasami
+    - Xinyuan Luo
+    - Haoyu Li
+    - Xianyi Cheng
+  venue: IROSW FullShift Robot CoWorkers
+  year: 2026
+  selected: false
+  preview: /assets/publication_preview/frames.jpg
+  links: []
+
+- id: any-ttach
+  type: workshop
+  title: "Any-ttach: Quick End-effector Swapping Enables Manipulation Dexterity with Simplicity"
+  authors:
+    - Weizhe Ni
+    - Jinzhou Li
+    - Xingrui Chen
+    - Haoyu Li
+    - Cody Andres Alessio-Bunnell
+    - Yifei Dong
+    - Xianyi Cheng
+  venue: RSSW Dexterous Manipulation
+  year: 2026
+  selected: false
+  preview: /assets/publication_preview/any-ttach.jpg
+  links: []
+
 - id: structure-guided-3d
   type: workshop
   title: "Efficient Structure-Guided 3D Physical Property Reasoning"
