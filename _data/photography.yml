@@ -1,5 +1,6 @@
-# Photography gallery, newest first. Photos keep their natural aspect ratio in
-# a masonry grid; hovering one reveals its location and date.
+# Photography gallery, newest first. Photos keep their own aspect ratio in a
+# masonry grid, so mixing wide, tall and square shots gives the varied layout.
+# Hovering one reveals its location and date.
 #
 # Add a photo: drop the file in assets/img/photography/, then add an entry:
 #
@@ -13,7 +14,7 @@
   date: "July 2026"
   alt: Snow-covered ridge of the Ge'nyen Massif under heavy cloud
 
-- src: /assets/img/photography/mount-cameroon.jpg
+- src: /assets/img/photography/mount-cameroon-tall.jpg
   location: "Mount Cameroon"
   date: "July 2026"
   alt: Jagged peaks under storm clouds, with sunlit forested slopes in the foreground
@@ -23,12 +24,12 @@
   date: "June 2024"
   alt: White chalk cliffs above a pebble beach, with wildflowers in the foreground
 
-- src: /assets/img/photography/pittsburgh-eclipse.jpg
+- src: /assets/img/photography/pittsburgh-eclipse-square.jpg
   location: "Pittsburgh"
   date: "April 2024"
-  alt: Total solar eclipse, the Sun's corona glowing around the dark disc of the Moon
+  alt: Total solar eclipse, the Sun's corona glowing around the dark disc of the Moon, with a small prominence at its edge
 
-- src: /assets/img/photography/sanya.jpg
+- src: /assets/img/photography/sanya-tall.jpg
   location: "Sanya"
   date: "July 2023"
   alt: Sunset over the sea, sunlight breaking through towering clouds above distant islands

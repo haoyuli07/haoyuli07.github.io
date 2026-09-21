@@ -244,10 +244,11 @@ hr {
 .pub .links .sep { color: var(--muted); }
 
 /* --- photography ---------------------------------------------------------- */
-/* Values mirror the reference gallery (xunjianyin.github.io/photography). */
+/* Modelled on xunjianyin.github.io/photography, in a narrower 1140px frame
+   so cards stay small (~350px) and three columns hold down to 860px. */
 
 .wrap.wide {
-  max-width: 1400px;
+  max-width: 1140px;
   padding: 40px 20px 0;
 }
 
@@ -349,7 +350,7 @@ hr {
 .photo-item:hover .photo-caption,
 .photo-item:focus-visible .photo-caption { opacity: 1; }
 
-@media (max-width: 1024px) {
+@media (max-width: 860px) {
   .wrap.wide { padding: 30px 15px 0; }
   .photo-grid { column-count: 2; column-gap: 15px; }
   .photo-item { margin-bottom: 15px; }
@@ -360,7 +361,7 @@ hr {
   .gallery-intro { margin-bottom: 30px; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 560px) {
   .wrap.wide { padding: 20px 10px 0; }
   .photo-grid { column-count: 1; column-gap: 0; }
   .photo-item { margin-bottom: 15px; }

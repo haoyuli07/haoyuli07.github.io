@@ -25,7 +25,7 @@ links:
   x: "https://x.com/haoyuli07"
   cv: ""                 # e.g. /assets/pdf/cv.pdf
 
-contact_note: Email is the best way to reach me.
+contact_note: ""   # optional line under the contact email; leave empty to hide
 
 # ---------------------------------------------------------------------------
 # Build settings — no plugins, so GitHub Pages builds this natively.
